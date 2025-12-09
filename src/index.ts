@@ -1,2 +1,12 @@
-const greeting: string = "Tazkiyah server starting, Hello Inan how are you";
-console.log(greeting);
+import express, { Request, Response } from 'express';
+
+const app = express();
+const port = "3000";
+
+app.get('/', (req: Request, res: Response) => {
+    res.json({"message": "Tazkiya API is running"});
+});
+
+app.listen(port, () => {
+    console.log("Server running at  http://localhost:${port}");
+})
